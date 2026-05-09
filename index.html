@@ -1,0 +1,1435 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Graduate Portfolio</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        color: white;
+        background: #050510;
+        line-height: 1.6;
+      }
+
+      .main-bg {
+        min-height: 100vh;
+        background:
+          radial-gradient(
+            circle at 0% 10%,
+            rgba(168, 85, 247, 0.95),
+            transparent 34%
+          ),
+          radial-gradient(
+            circle at 100% 25%,
+            rgba(34, 211, 238, 0.75),
+            transparent 36%
+          ),
+          radial-gradient(
+            circle at 75% 80%,
+            rgba(37, 99, 235, 0.55),
+            transparent 38%
+          ),
+          radial-gradient(
+            circle at 25% 70%,
+            rgba(88, 28, 135, 0.55),
+            transparent 35%
+          ),
+          linear-gradient(
+            90deg,
+            #160023 0%,
+            #02020a 43%,
+            #03052a 70%,
+            #063840 100%
+          );
+        background-attachment: fixed;
+      }
+
+      header {
+        min-height: 100vh;
+        padding: 30px 8%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 70px;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 24px;
+      }
+
+      nav a {
+        color: #e8e8e8;
+        text-decoration: none;
+        font-size: 15px;
+        transition: 0.3s;
+      }
+
+      nav a:hover {
+        color: #ffffff;
+      }
+
+      .hero {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 850px;
+      }
+
+      .tag {
+        width: fit-content;
+        padding: 10px 18px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 50px;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(12px);
+        color: #f3e8ff;
+        font-size: 14px;
+        margin-bottom: 22px;
+      }
+
+      .hero h1 {
+        font-size: clamp(45px, 7vw, 86px);
+        line-height: 1.05;
+        margin-bottom: 24px;
+      }
+
+      .hero h1 span {
+        color: #c084fc;
+      }
+
+      .hero p {
+        max-width: 720px;
+        font-size: 19px;
+        color: #e5e5e5;
+        margin-bottom: 35px;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-block;
+        text-decoration: none;
+        padding: 13px 22px;
+        border-radius: 10px;
+        font-weight: bold;
+        transition: 0.3s;
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn.primary {
+        background: linear-gradient(135deg, #9333ea, #2563eb);
+        color: white;
+      }
+
+      .btn.secondary {
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        color: white;
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+        opacity: 0.9;
+      }
+
+      section {
+        padding: 90px 8%;
+        background: rgba(2, 2, 10, 0.72);
+        backdrop-filter: blur(8px);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .section-title {
+        margin-bottom: 45px;
+      }
+
+      .section-title span {
+        color: #c084fc;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: bold;
+      }
+
+      .section-title h2 {
+        font-size: 38px;
+        margin-top: 8px;
+      }
+
+      .glass-card,
+      .card,
+      .project-card,
+      .certificate-card {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(14px);
+        border-radius: 20px;
+      }
+
+      .study-layout {
+        display: grid;
+        grid-template-columns: 0.9fr 1.4fr;
+        gap: 35px;
+        align-items: stretch;
+      }
+
+      .university-card {
+        padding: 32px;
+        text-align: center;
+      }
+
+      .university-logo {
+        width: 145px;
+        height: 145px;
+        margin: 0 auto 22px;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        color: #ddd;
+      }
+
+      .university-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: 14px;
+      }
+
+      .info-list {
+        text-align: left;
+        margin-top: 20px;
+      }
+
+      .info-list p {
+        color: #dedede;
+        margin-bottom: 10px;
+      }
+
+      .courses-card {
+        padding: 32px;
+      }
+
+      .courses-list {
+        columns: 2;
+        column-gap: 35px;
+        padding-left: 18px;
+        color: #e3e3e3;
+      }
+
+      .courses-list li {
+        margin-bottom: 10px;
+        break-inside: avoid;
+      }
+
+      .certificates-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      .certificate-card {
+        overflow: hidden;
+      }
+
+      .certificate-card img {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+        display: block;
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .certificate-content {
+        padding: 22px;
+      }
+
+      .certificate-content h3 {
+        font-size: 20px;
+        margin-bottom: 6px;
+      }
+
+      .certificate-content p {
+        color: #dddddd;
+      }
+
+      .training-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+        align-items: center;
+      }
+
+      .training-text {
+        padding: 42px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .training-text h3 {
+        font-size: 28px;
+        margin-bottom: 14px;
+      }
+
+      .training-text p {
+        color: #dddddd;
+        margin-bottom: 20px;
+      }
+
+      .training-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+
+      .training-images img {
+        width: 100%;
+        height: 190px;
+        object-fit: cover;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .projects-container {
+        display: grid;
+        gap: 35px;
+      }
+
+      .project-card {
+        padding: 28px;
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 28px;
+        align-items: start;
+      }
+
+      .project-media {
+        display: grid;
+        gap: 14px;
+      }
+
+      .video-box {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        border-radius: 16px;
+        overflow: hidden;
+        background: rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .video-box iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .project-images {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+
+      .project-images img {
+        width: 100%;
+        height: 105px;
+        object-fit: cover;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .project-info {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .project-header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .project-logo {
+        width: 70px;
+        height: 70px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        flex-shrink: 0;
+        font-size: 28px;
+      }
+
+      .project-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: 8px;
+      }
+
+      .project-info h3 {
+        font-size: 28px;
+      }
+
+      .project-info p {
+        color: #dddddd;
+      }
+
+      .project-tags {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .project-tags span {
+        background: rgba(147, 51, 234, 0.25);
+        color: #e9d5ff;
+        padding: 6px 10px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+      .contact {
+        text-align: center;
+      }
+      .contact .section-title {
+        text-align: center;
+      }
+
+      .contact p {
+        max-width: 650px;
+        margin: 0 auto 28px;
+        color: #dddddd;
+      }
+
+      .contact-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .contact-links a {
+        color: white;
+        text-decoration: none;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        padding: 13px 20px;
+        border-radius: 10px;
+        transition: 0.3s;
+      }
+
+      .contact-links a:hover {
+        background: #7c3aed;
+      }
+
+      footer {
+        text-align: center;
+        padding: 25px;
+        color: #cfcfcf;
+        background: rgba(2, 2, 10, 0.82);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: 14px;
+      }
+
+      @media (max-width: 1000px) {
+        nav ul {
+          display: none;
+        }
+        .study-layout,
+        .training-layout,
+        .project-card {
+          grid-template-columns: 1fr;
+        }
+        .certificates-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .courses-list {
+          columns: 1;
+        }
+      }
+
+      @media (max-width: 650px) {
+        section {
+          padding: 70px 6%;
+        }
+        header {
+          padding: 30px 6%;
+        }
+        .certificates-grid,
+        .training-images,
+        .project-images {
+          grid-template-columns: 1fr;
+        }
+        .project-images img {
+          height: 180px;
+        }
+
+        .slider {
+          height: 420px;
+        }
+      }
+
+      .project-logo {
+        width: 90px;
+        height: 90px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 18px;
+        overflow: hidden;
+      }
+
+      .project-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: 10px;
+      }
+
+      .slider {
+        position: relative;
+        width: 100%;
+        height: 620px;
+        overflow: hidden;
+        border-radius: 26px;
+
+        background: linear-gradient(
+          145deg,
+          rgba(20, 20, 35, 0.95),
+          rgba(10, 10, 20, 0.95)
+        );
+
+        border: 1px solid rgba(255, 255, 255, 0.08);
+
+        box-shadow:
+          0 0 35px rgba(124, 58, 237, 0.18),
+          0 0 70px rgba(37, 99, 235, 0.12);
+      }
+
+      .slider-track {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.6s ease;
+      }
+
+      .slider-track img {
+        min-width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: 30px;
+        border-radius: 18px;
+
+        background:
+          radial-gradient(
+            circle at top,
+            rgba(124, 58, 237, 0.18),
+            transparent 40%
+          ),
+          linear-gradient(135deg, #0f0f18, #141428, #101827);
+
+        backdrop-filter: blur(10px);
+      }
+
+      .slider-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 5;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0.45);
+        color: white;
+        font-size: 28px;
+        backdrop-filter: blur(8px);
+        transition: 0.3s;
+      }
+
+      .slider-btn:hover {
+        background: rgba(124, 58, 237, 0.95);
+        transform: translateY(-50%) scale(1.05);
+      }
+
+      .slider-btn.prev {
+        left: 18px;
+      }
+
+      .slider-btn.next {
+        right: 18px;
+      }
+
+      .study-buttons {
+        display: flex;
+        gap: 16px;
+        margin-top: 28px;
+        flex-wrap: wrap;
+      }
+
+      .study-btn {
+        text-decoration: none;
+        color: white;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        padding: 13px 22px;
+        border-radius: 10px;
+        transition: 0.3s;
+        font-weight: bold;
+      }
+
+      .study-btn:hover {
+        background: #7c3aed;
+      }
+
+      .graduation-btn {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 215, 0, 0.18),
+          rgba(255, 174, 0, 0.12)
+        );
+
+        border: 1px solid rgba(255, 215, 0, 0.35);
+
+        color: #ffe082;
+
+        box-shadow: 0 0 18px rgba(255, 215, 0, 0.08);
+      }
+
+      .graduation-btn:hover {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 215, 0, 0.35),
+          rgba(255, 174, 0, 0.22)
+        );
+
+        color: white;
+      }
+
+      .study-buttons {
+        display: flex;
+        gap: 18px;
+        margin-top: 32px;
+        flex-wrap: wrap;
+      }
+
+      .study-btn {
+        position: relative;
+        overflow: hidden;
+
+        display: flex;
+        align-items: center;
+        gap: 14px;
+
+        min-width: 320px;
+
+        padding: 22px 28px;
+
+        border-radius: 18px;
+
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        font-weight: 700;
+
+        background: rgba(255, 255, 255, 0.06);
+
+        border: 1px solid rgba(255, 255, 255, 0.14);
+
+        backdrop-filter: blur(12px);
+
+        transition: 0.35s ease;
+      }
+
+      .study-btn:hover {
+        transform: translateY(-4px);
+
+        background: rgba(124, 58, 237, 0.18);
+
+        border-color: rgba(167, 139, 250, 0.45);
+      }
+
+      .btn-icon {
+        font-size: 30px;
+        z-index: 2;
+      }
+
+      /* Graduation Style */
+
+      .study-buttons {
+        display: flex;
+        gap: 14px;
+        margin-top: 28px;
+        flex-wrap: wrap;
+      }
+
+      .study-btn {
+        position: relative;
+        overflow: hidden;
+
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        min-width: 230px;
+
+        padding: 14px 20px;
+
+        border-radius: 16px;
+
+        text-decoration: none;
+        color: white;
+        font-size: 15px;
+        font-weight: 700;
+
+        background: rgba(255, 255, 255, 0.06);
+
+        border: 1px solid rgba(255, 255, 255, 0.14);
+
+        backdrop-filter: blur(12px);
+
+        transition: 0.35s ease;
+      }
+
+      .study-btn:hover {
+        transform: translateY(-3px);
+
+        background: rgba(124, 58, 237, 0.16);
+
+        border-color: rgba(167, 139, 250, 0.4);
+      }
+
+      .btn-icon {
+        font-size: 22px;
+        z-index: 2;
+      }
+
+      /* Graduation Button */
+
+      .graduation-btn {
+        border: 1px solid rgba(255, 200, 87, 0.45);
+
+        background: linear-gradient(
+          135deg,
+          rgba(255, 191, 36, 0.1),
+          rgba(255, 140, 0, 0.06)
+        );
+
+        color: #ffd166;
+
+        box-shadow: 0 0 18px rgba(255, 200, 87, 0.06);
+      }
+
+      .graduation-btn:hover {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 191, 36, 0.18),
+          rgba(255, 140, 0, 0.1)
+        );
+
+        box-shadow: 0 0 22px rgba(255, 200, 87, 0.14);
+      }
+
+      .graduation-bg-icon {
+        position: absolute;
+
+        right: 14px;
+        top: 50%;
+
+        transform: translateY(-50%);
+
+        font-size: 55px;
+
+        opacity: 0.07;
+
+        pointer-events: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="main-bg">
+      <header id="home">
+        <nav>
+          <div class="logo">Portfolio</div>
+          <ul>
+            <li><a href="#study">Study</a></li>
+            <li><a href="#training">Co-op Training</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certificates">Courses</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="hero">
+          <div class="tag">AI Graduate</div>
+          <h1><span>Amjad</span> Alharbi</h1>
+          <p>
+            Artificial Intelligence graduate with experience in machine
+            learning, computer vision, UI/UX design, and real-world AI projects.
+          </p>
+          <div class="buttons">
+            <a href="files/cv.pdf" target="_blank" class="btn primary"
+              >Download CV</a
+            >
+            <a href="#contact" class="btn secondary">Contact Me</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Study Section -->
+      <section id="study">
+        <div class="section-title">
+          <span>Study</span>
+          <h2>Education Background</h2>
+        </div>
+
+        <div class="study-layout">
+          <div class="glass-card university-card">
+            <div class="university-logo">
+              <img src="images/uqu_logo.png" alt="University Logo" />
+            </div>
+            <h3>Umm Al-Qura University</h3>
+            <div class="info-list">
+              <p><strong>Major:</strong> Artificial Intelligence</p>
+              <p><strong>Degree:</strong> Bachelor</p>
+              <p><strong>GPA:</strong> 3.95 / 4.00</p>
+              <p><strong>Graduation Year:</strong> 2026</p>
+            </div>
+          </div>
+
+          <div class="glass-card courses-card">
+            <h3>Relevant University Courses</h3>
+            <br />
+            <ul class="courses-list">
+              <li>Machine Learning</li>
+              <li>Deep Learning</li>
+              <li>Computer Vision</li>
+              <li>Natural Language Processing</li>
+              <li>Database Systems</li>
+              <li>Image Processing</li>
+              <li>Human Computer Interaction</li>
+              <li>Data Structures</li>
+              <li>Algorithms</li>
+            </ul>
+            <div class="study-buttons">
+              <a
+                href="files/السجل الأكاديمي.pdf"
+                target="_blank"
+                class="study-btn"
+              >
+                <span class="btn-icon"></span>
+                Academic Record
+              </a>
+              <!--               
+              <a
+                href="files/graduation-document.pdf"
+                target="_blank"
+                class="study-btn graduation-btn"
+              >
+                <span class="btn-icon">🎓</span>
+                Graduation Document
+
+                <span class="graduation-bg-icon">🎓</span>
+              </a> -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--  Grad project Section -->
+      <section id="graduation">
+        <div class="section-title">
+          <span>Graduation</span>
+          <h2>Graduation Project</h2>
+        </div>
+
+        <div class="training-layout">
+          <div class="glass-card training-text">
+            <div class="project-logo">
+              <img src="images/hadenLogo.png" alt="Haden Logo" />
+            </div>
+
+            <h3>Haden</h3>
+            <p>
+              Haden is an AI-powered platform designed to support adopted
+              children through interactive virtual sessions, emotion analysis,
+              and intelligent reporting tools for social workers.
+            </p>
+            <p>
+              The project includes a virtual character, an intelligent chatbot,
+              a facial emotion recognition system, and a mobile application that
+              helps monitor children’s emotional well-being.
+            </p>
+            <!-- <a href="https://www.figma.com/" target="_blank" class="btn primary"
+              >View Figma Design</a
+            > -->
+          </div>
+
+          <div class="slider">
+            <button class="slider-btn prev" onclick="moveSlide(-1)">
+              &#10094;
+            </button>
+
+            <div class="slider-track" id="sliderTrack">
+              <img src="images/Hp1.png" alt="Haden Interface 1" />
+              <img src="images/Hp2.png" alt="Haden Interface 2" />
+              <img src="images/Hp3.png" alt="Haden Interface 3" />
+              <img src="images/Hp4.png" alt="Haden Interface 4" />
+            </div>
+
+            <button class="slider-btn next" onclick="moveSlide(1)">
+              &#10095;
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Co-op Training Section -->
+      <section id="training">
+        <div class="section-title">
+          <span>Co-op Training</span>
+          <h2>Training Experience</h2>
+        </div>
+
+        <!-- Training Info -->
+        <div class="glass-card training-text">
+          <div class="project-logo">
+            <img src="images/logo3.png" alt="Company Logo" />
+          </div>
+
+          <h3>Holy Makkah Municipality</h3>
+
+          <div class="info-list">
+            <p><strong>Position:</strong> Technical Support</p>
+            <p><strong>Duration:</strong> 6 Months</p>
+            <p><strong>Location:</strong> mecca, Saudi Arabia</p>
+          </div>
+        </div>
+
+        <!-- Training Projects -->
+        <div class="section-title"></div>
+
+        <div class="projects-container">
+          <!-- Mousa Project -->
+          <div class="project-card">
+            <div class="project-media">
+              <div class="video-box">
+                <iframe
+                  src="videos/M.mp4"
+                  title="Project Video"
+                  allowfullscreen
+                >
+                </iframe>
+              </div>
+
+              <div class="project-images">
+                <img src="images/موصى.png" alt="" />
+                <img src="images/معين.jpeg" alt="" />
+                <img src="images/منبه.png" alt="" />
+              </div>
+            </div>
+
+            <div class="project-info">
+              <div class="project-header">
+                <div class="project-logo">
+                  <img src="images/موصى.png" alt="" />
+                </div>
+
+                <div>
+                  <h3>Mousa Platform</h3>
+                  <p>AI Platform</p>
+                </div>
+              </div>
+
+              <p>
+                Mousa was a group of three integrated AI-powered platforms
+                developed as a final co-op training project to improve the
+                process of handling reports and assistance requests. The project
+                included the Mousa platform as the main system, the “Moeen”
+                platform for providing support and assistance services, and the
+                “Munabbih” platform for handling alerts and notifications. The
+                platforms used artificial intelligence and natural language
+                processing techniques to analyze and classify reports, verify
+                their validity, and direct them to the appropriate parties
+                efficiently. The project combined smart automation, machine
+                learning models, and user-friendly interfaces to enhance
+                response accuracy, speed, and decision-making.
+              </p>
+
+              <div class="project-tags">
+                <span>ML</span>
+                <span>NLP</span>
+                <span>UI/UX</span>
+              </div>
+
+              <a
+                href="https://www.figma.com/proto/ceVu5qcGa51JCOvsXzpy1d/%D9%86%D8%B3%D8%AE%D9%87-%D9%85%D8%B9%D8%AF%D9%84%D9%87?node-id=2199-3539&p=f&t=uYs1qGUEQ7rS0f91-1&scaling=scale-down&content-scaling=fixed&page-id=2184%3A2214&starting-point-node-id=2198%3A3522&show-proto-sidebar=1"
+                target="_blank"
+                class="btn secondary"
+              >
+                View Figma
+              </a>
+              <a
+                href="files/بوستر موصى.pdf"
+                target="_blank"
+                class="btn secondary"
+              >
+                View Poster
+              </a>
+            </div>
+          </div>
+
+          <!-- Add Another Training Project Here -->
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects">
+        <div class="section-title">
+          <span>Projects</span>
+          <h2>Projects</h2>
+        </div>
+
+        <div class="projects-container">
+          <!-- Project 1 -->
+          <div class="project-card">
+            <div class="project-media">
+              <div class="video-box">
+                <iframe
+                  src="videos/آبه طريقة العمل.mp4"
+                  title="Project Video"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+
+            <div class="project-info">
+              <div class="project-header">
+                <div class="project-logo">
+                  <img src="images/آيه.png" alt="Project Logo" />
+                </div>
+                <div>
+                  <h3>Ayah</h3>
+                  <p>Virtual Finance Assistance</p>
+                </div>
+              </div>
+              <p>
+                Ayah is an AI-powered financial assistant designed to provide
+                accessible and user-friendly banking support from home. The
+                project features an interactive virtual character built using
+                MetaHuman and Unreal Engine, capable of voice communication and
+                smart assistance. Ayah was developed to simplify financial
+                services, enhance user interaction, and support financial
+                inclusion through AI-driven conversations and virtual customer
+                service experiences.
+              </p>
+              <div class="project-tags">
+                <span>AI</span>
+                <span>Flutter</span>
+                <span>Figma</span>
+              </div>
+              <a
+                href="https://github.com/AmjadAlluqmani/Ayah"
+                target="_blank"
+                class="btn secondary"
+                >GitHub Repository</a
+              >
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card">
+            <div class="project-media">
+              <div class="video-box">
+                <iframe
+                  src="videos/تطبيق مرقب.mp4"
+                  title="Project Video"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="project-images">
+                <img src="images/مرقب صفحة.png" alt="Project Image" />
+                <img src="images/مرقب صفحة 2.png" alt="Project Image" />
+              </div>
+            </div>
+
+            <div class="project-info">
+              <div class="project-header">
+                <div class="project-logo">
+                  <img src="images/مرقب.png" alt="Project Logo" />
+                </div>
+                <div>
+                  <h3>Muraqib</h3>
+                  <p>A smart tool for monitoring land in Mecca</p>
+                </div>
+              </div>
+              <p>
+                Muraqib was an AI-powered platform focused on monitoring and
+                analyzing land areas using smart technologies and data analysis.
+                The project aimed to help users track land information, detect
+                changes, and improve monitoring processes through intelligent
+                visualization and automated analysis tools.
+              </p>
+              <div class="project-tags">
+                <span>UI/UX</span>
+                <span>Computer Vision</span>
+                <span>PyTorch</span>
+              </div>
+              <a
+                href="https://www.figma.com/proto/xMd1snoyIeNLAwL0Rdefoo/%D9%85%D8%B1%D9%82%D8%A8?node-id=476-17855&t=3HpgjhBw8qMcO8ZH-0&scaling=scale-down&content-scaling=fixed&page-id=311%3A1697&starting-point-node-id=476%3A17855"
+                target="_blank"
+                class="btn secondary"
+              >
+                Figma for desktop
+              </a>
+              <a
+                href="https://www.figma.com/proto/xMd1snoyIeNLAwL0Rdefoo/%D9%85%D8%B1%D9%82%D8%A8?node-id=193-20680&p=f&t=3HpgjhBw8qMcO8ZH-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=193%3A20680&show-proto-sidebar=1"
+                target="_blank"
+                class="btn secondary"
+              >
+                Figma for mobile
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card">
+            <div class="project-media">
+              <div class="video-box">
+                <iframe
+                  src="videos/مكتشف.mp4"
+                  title="Project Video"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+
+            <div class="project-info">
+              <div class="project-header">
+                <div class="project-logo">
+                  <img src="images/مكتشف.png" alt="Project Logo" />
+                </div>
+                <div>
+                  <h3>Moktashef</h3>
+                  <p>AI-powered tool for identifying talented children.</p>
+                </div>
+              </div>
+              <p>
+                Moktashef is an AI-powered platform designed to help discover
+                children’s interests, talents, and abilities through interactive
+                activities and intelligent analysis. The platform uses engaging
+                child-friendly experiences and AI techniques to build
+                personalized insights and provide useful recommendations for
+                parents and educators to better support children’s development.
+              </p>
+              <div class="project-tags">
+                <span>UI/UX</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project-card">
+            <div class="project-media">
+              <div class="video-box">
+                <iframe
+                  src="videos/بارنز.mp4"
+                  title="Project Video"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+
+            <div class="project-info">
+              <div class="project-header">
+                <div class="project-logo">
+                  <img src="images/كون وإربح.png" alt="Project Logo" />
+                </div>
+                <div>
+                  <h3>Create and win</h3>
+                  <p>The added feature of the Coffee website</p>
+                </div>
+              </div>
+              <p>
+                It is a smart and interactive concept developed for Barns that
+                allows customers to create and customize their own coffee
+                drinks, share them with others, and earn rewards when their
+                creations are ordered. The platform combines personalization,
+                social engagement, and gamification to create a more fun and
+                engaging café experience.
+              </p>
+              <div class="project-tags">
+                <span>Mobile App</span>
+                <span>Firebase</span>
+                <span>Prototype</span>
+              </div>
+              <a
+                href="https://www.figma.com/proto/AsT6r7iwaUjA646bV1Oh9j/Untitled?node-id=246-4147&p=f&t=pq1H7ggZKXPgB9z4-1&scaling=scale-down-width&content-scaling=fixed&page-id=246%3A3912"
+                target="_blank"
+                class="btn secondary"
+                >View Figma</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Certificates / Courses Section -->
+      <section id="certificates">
+        <div class="section-title">
+          <span>Courses</span>
+          <h2>Certificates & Training Courses</h2>
+        </div>
+
+        <div class="certificates-grid">
+          <div class="certificate-card">
+            <img src="images/advanced_k.png" alt="Certificate 1" />
+            <div class="certificate-content">
+              <h3>Advanced Artificial Intelligence Training Program</h3>
+              <p>KAUST</p>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <img src="images/intro_k.png" alt="Certificate 2" />
+            <div class="certificate-content">
+              <h3>Introductory Artificial Intelligence Training Program</h3>
+              <p>KAUST</p>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <img src="images/algebra.png" alt="Certificate 3" />
+            <div class="certificate-content">
+              <h3>Linear Algebra for Machine Learning and Data Science</h3>
+              <p>DeepLearning.AI</p>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <img src="images/cal.png" alt="Certificate 3" />
+            <div class="certificate-content">
+              <h3>Calculus for Machine Learning and Data Science</h3>
+              <p>DeepLearning.AI</p>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <img src="images/prob.png" alt="Certificate 3" />
+            <div class="certificate-content">
+              <h3>
+                Probability & Statistics for Machine Learning & Data Science
+              </h3>
+              <p>DeepLearning.AI</p>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <img src="images/python_basics.png" alt="Certificate 3" />
+            <div class="certificate-content">
+              <h3>Python Basics</h3>
+              <p>University of Michigan</p>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <img src="images/nodejs.png" alt="Certificate 3" />
+            <div class="certificate-content">
+              <h3>Node.js</h3>
+              <p>منصة سطر</p>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <img src="images/SQL.png" alt="Certificate 3" />
+            <div class="certificate-content">
+              <h3>SQL 101</h3>
+              <p>منصة سطر</p>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <img src="images/ux.png" alt="Certificate 3" />
+            <div class="certificate-content">
+              <h3>UX/UI</h3>
+              <p>منصة سطر</p>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <img src="images/Dronebasics.png" alt="Certificate 3" />
+            <div class="certificate-content">
+              <h3>Drone Basics</h3>
+              <p>منصة سطر</p>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <img src="images/python1.jpeg" alt="Certificate 3" />
+            <div class="certificate-content">
+              <h3>Python 101</h3>
+              <p>منصة سطر</p>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <img src="images/python2.jpeg" alt="Certificate 3" />
+            <div class="certificate-content">
+              <h3>Python 102</h3>
+              <p>منصة سطر</p>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <img src="images/python3.jpeg" alt="Certificate 3" />
+            <div class="certificate-content">
+              <h3>Python 103</h3>
+              <p>منصة سطر</p>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <img src="images/CSS.jpeg" alt="Certificate 3" />
+            <div class="certificate-content">
+              <h3>CSS</h3>
+              <p>منصة سطر</p>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <img src="images/HTML.jpeg" alt="Certificate 3" />
+            <div class="certificate-content">
+              <h3>HTML</h3>
+              <p>منصة سطر</p>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <img src="images/Markdown1.jpeg" alt="Certificate 3" />
+            <div class="certificate-content">
+              <h3>Markdown 101</h3>
+              <p>منصة سطر</p>
+            </div>
+          </div>
+
+          <div class="certificate-card">
+            <img src="images/Markdown2.jpeg" alt="Certificate 3" />
+            <div class="certificate-content">
+              <h3>Markdown 102</h3>
+              <p>منصة سطر</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact">
+        <div class="section-title">
+          <span>Contact</span>
+          <h2>Let's Work Together</h2>
+        </div>
+
+        <p>
+          I am open to training opportunities, and entry-level roles in AI,
+          software development, computer vision, and data-related fields.
+        </p>
+
+        <div class="contact-links">
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=amj.luqmani@gmail.com"
+          >
+            Email
+          </a>
+          <a
+            href="www.linkedin.com/in/amjad-alluqmani-178592341"
+            target="_blank"
+          >
+            LinkedIn
+          </a>
+          <a href="https://github.com/AmjadAlluqmani" target="_blank">GitHub</a>
+          <a href="files/cv.pdf" target="_blank">Download CV</a>
+        </div>
+      </section>
+
+      <footer></footer>
+    </div>
+
+    <script>
+      let currentSlide = 0;
+      const sliderTrack = document.getElementById("sliderTrack");
+      const slides = sliderTrack.querySelectorAll("img");
+
+      function showSlide(index) {
+        if (index >= slides.length) {
+          currentSlide = 0;
+        } else if (index < 0) {
+          currentSlide = slides.length - 1;
+        } else {
+          currentSlide = index;
+        }
+
+        sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+      }
+
+      function moveSlide(direction) {
+        showSlide(currentSlide + direction);
+      }
+
+      setInterval(() => {
+        moveSlide(1);
+      }, 3000);
+    </script>
+  </body>
+</html>
