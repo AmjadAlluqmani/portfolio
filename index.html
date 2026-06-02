@@ -435,6 +435,25 @@
         font-weight: bold;
       }
 
+      .project-meta {
+        margin-top: 6px !important;
+        margin-bottom: 0 !important;
+        color: #cfcfcf !important;
+        font-size: 14px;
+        line-height: 1.4;
+        letter-spacing: 0.2px;
+      }
+
+      .project-meta strong {
+        color: #ffffff;
+        font-weight: 700;
+      }
+
+      .graduation-project-title .project-meta {
+        font-size: 15px;
+        color: #d8d8d8 !important;
+      }
+
       .contact {
         text-align: center;
       }
@@ -795,6 +814,133 @@
 
         pointer-events: none;
       }
+
+      /* Graduation Project Section */
+
+      .graduation-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 34px;
+        align-items: stretch;
+      }
+
+      .graduation-card {
+        padding: 34px 38px;
+        justify-content: flex-start;
+      }
+
+      .graduation-project-header {
+        display: flex;
+        align-items: center;
+        gap: 26px;
+        margin-bottom: 34px;
+      }
+
+      .graduation-logo {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 0;
+        border-radius: 22px;
+        flex-shrink: 0;
+      }
+
+      .graduation-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: 12px;
+      }
+
+      .graduation-project-title h3 {
+        font-size: 36px;
+        line-height: 1.1;
+        margin: 0 0 8px;
+      }
+
+      .graduation-project-title p {
+        margin: 0;
+        color: #dddddd;
+        font-size: 20px;
+        line-height: 1.3;
+      }
+
+      .graduation-card > p {
+        color: #dddddd;
+        font-size: 19px;
+        line-height: 1.75;
+        margin-bottom: 24px;
+      }
+
+      .graduation-tags {
+        margin-top: 30px;
+        margin-bottom: 28px;
+        gap: 10px;
+      }
+
+      .graduation-tags span {
+        font-size: 14px;
+        padding: 8px 14px;
+      }
+
+      .project-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 8px;
+      }
+
+      .project-buttons .btn {
+        width: 100%;
+        margin: 0;
+        padding: 16px 22px;
+        border-radius: 12px;
+      }
+
+      @media (max-width: 1000px) {
+        .graduation-layout {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 650px) {
+        .graduation-card {
+          padding: 28px 22px;
+        }
+
+        .graduation-project-header {
+          gap: 18px;
+          margin-bottom: 28px;
+        }
+
+        .graduation-logo {
+          width: 92px;
+          height: 92px;
+        }
+
+        .graduation-project-title h3 {
+          font-size: 30px;
+        }
+
+        .graduation-project-title p {
+          font-size: 17px;
+        }
+
+        .graduation-card > p {
+          font-size: 16px;
+        }
+      }
+      .graduation-card > p.project-role {
+        font-size: 15px !important;
+        color: #d8d8d8 !important;
+        margin: 4px 0 12px !important;
+        line-height: 1.3 !important;
+        font-weight: 500;
+      }
+
+      .graduation-card > p.project-role strong {
+        color: #ffffff !important;
+        font-weight: 600;
+      }
     </style>
   </head>
 
@@ -888,36 +1034,78 @@
         </div>
       </section>
 
-      <!--  Grad project Section -->
+      <!-- Grad project Section -->
       <section id="graduation">
         <div class="section-title">
           <span>Graduation</span>
           <h2>Graduation Project</h2>
         </div>
 
-        <div class="training-layout">
-          <div class="glass-card training-text">
-            <div class="project-logo">
-              <img src="images/hadenLogo.png" alt="Haden Logo" />
+        <div class="training-layout graduation-layout">
+          <div class="glass-card training-text graduation-card">
+            <div class="graduation-project-header">
+              <div class="project-logo graduation-logo">
+                <img src="images/hadenLogo.png" alt="Haden Logo" />
+              </div>
+
+              <div class="graduation-project-title">
+                <h3>Haden</h3>
+                <p>AI Platform for adopted children</p>
+              </div>
             </div>
 
-            <h3>Haden</h3>
             <p>
               Haden is an AI-powered platform designed to support adopted
               children through interactive virtual sessions, emotion analysis,
               and intelligent reporting tools for social workers.
             </p>
+
             <p>
               The project includes a virtual character, an intelligent chatbot,
               a facial emotion recognition system, and a mobile application that
               helps monitor children’s emotional well-being.
             </p>
-            <!-- <a href="https://www.figma.com/" target="_blank" class="btn primary"
-              >View Figma Design</a
-            > -->
+
+            <p class="project-role">
+              <strong>Team:</strong> 4 Members •
+              <strong>My Role:</strong> Leader, AI Developer, App Developer and
+              UI/UX Designer
+            </p>
+
+            <div class="project-tags graduation-tags">
+              <span>Firebase</span>
+              <span>UI/UX</span>
+              <span>LLM</span>
+              <span>Flutter</span>
+              <span>HeyGen</span>
+              <span>OpenAI</span>
+              <span>Computer Vision</span>
+            </div>
+
+            <div class="project-buttons">
+              <a
+                href="https://drive.google.com/file/d/1nrb9auzToG5ndW-wGiRGNlIu3m5l0P2z/view?usp=sharing"
+                target="_blank"
+                class="btn primary"
+              >
+                View Demo
+              </a>
+
+              <a
+                href="https://github.com/RaghadAlhashmi/Haden"
+                target="_blank"
+                class="btn primary"
+              >
+                View GitHub
+              </a>
+
+              <a href="files/poster.pdf" target="_blank" class="btn primary">
+                View Poster
+              </a>
+            </div>
           </div>
 
-          <div class="slider">
+          <div class="slider graduation-slider">
             <button class="slider-btn prev" onclick="moveSlide(-1)">
               &#10094;
             </button>
@@ -1007,6 +1195,10 @@
                 learning models, and user-friendly interfaces to enhance
                 response accuracy, speed, and decision-making.
               </p>
+              <p class="project-role">
+                <strong>Team:</strong> 6 Members • <strong>My Role:</strong> AI
+                Developer and UI/UX Designer
+              </p>
 
               <div class="project-tags">
                 <span>ML</span>
@@ -1075,10 +1267,14 @@
                 inclusion through AI-driven conversations and virtual customer
                 service experiences.
               </p>
+              <p class="project-role">
+                <strong>Team:</strong> 2 Members • <strong>My Role:</strong> AI
+                Developer
+              </p>
               <div class="project-tags">
-                <span>AI</span>
-                <span>Flutter</span>
-                <span>Figma</span>
+                <span>Unreal Engine</span>
+                <span>LLM</span>
+                <span>ElavenLabs</span>
               </div>
               <a
                 href="https://github.com/AmjadAlluqmani/Ayah"
@@ -1122,10 +1318,13 @@
                 changes, and improve monitoring processes through intelligent
                 visualization and automated analysis tools.
               </p>
+              <p class="project-role">
+                <strong>Team:</strong> 5 Members •
+                <strong>My Role:</strong> UI/UX Designer
+              </p>
               <div class="project-tags">
                 <span>UI/UX</span>
-                <span>Computer Vision</span>
-                <span>PyTorch</span>
+                <span>Web development</span>
               </div>
               <a
                 href="https://www.figma.com/proto/xMd1snoyIeNLAwL0Rdefoo/%D9%85%D8%B1%D9%82%D8%A8?node-id=476-17855&t=3HpgjhBw8qMcO8ZH-0&scaling=scale-down&content-scaling=fixed&page-id=311%3A1697&starting-point-node-id=476%3A17855"
@@ -1174,6 +1373,10 @@
                 personalized insights and provide useful recommendations for
                 parents and educators to better support children’s development.
               </p>
+              <p class="project-role">
+                <strong>Team:</strong> 3 Members •
+                <strong>My Role:</strong> Leader and UI/UX Designer
+              </p>
               <div class="project-tags">
                 <span>UI/UX</span>
               </div>
@@ -1210,10 +1413,12 @@
                 social engagement, and gamification to create a more fun and
                 engaging café experience.
               </p>
+              <p class="project-role">
+                <strong>Team:</strong> 3 Members •
+                <strong>My Role:</strong> UI/UX Designer
+              </p>
               <div class="project-tags">
-                <span>Mobile App</span>
-                <span>Firebase</span>
-                <span>Prototype</span>
+                <span>UI/UX</span>
               </div>
               <a
                 href="https://www.figma.com/proto/AsT6r7iwaUjA646bV1Oh9j/Untitled?node-id=246-4147&p=f&t=pq1H7ggZKXPgB9z4-1&scaling=scale-down-width&content-scaling=fixed&page-id=246%3A3912"
